@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [easy bank landing page](link)
+- Live Site URL: [Shortly URL shortening API](https://shortly-url-api.netlify.app/)
 
 ### Screenshot
 
