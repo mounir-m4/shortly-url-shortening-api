@@ -1,4 +1,4 @@
-// hanmburger menu logic
+// hanmburger menu
 const menu = document.querySelector('.hamburger');
 const btn = document.querySelector('.hamburger-btn');
 // menu list
@@ -18,7 +18,7 @@ menu.addEventListener('click', () => {
 	}
 });
 
-//shorten logic
+//shorten function
 const shorteningIt = () => {
 	//regex to validate instered link
 	const linkRegex =
@@ -52,7 +52,6 @@ const shorteningIt = () => {
 				];
 				const copyLinkClasses = ['btn-primary', 'copy-link'];
 				//add them using rest operator
-				// https://www.programiz.com/javascript/spread-operator
 				shortenBox.classList.add(...shortenClasses);
 				//create element to output unshorted link
 				const oldLink = document.createElement('p');
@@ -64,6 +63,7 @@ const shorteningIt = () => {
 				const newLink = document.createElement('p');
 				// add class (for style)
 				newLink.classList.add('new-link');
+				// get the shorted link from the API
 				newLink.innerText = data.result.full_short_link;
 				// create button element
 				const copyLink = document.createElement('button');
@@ -79,14 +79,15 @@ const shorteningIt = () => {
 				outputContainer.append(shortenBox);
 				// clear th output
 				intputvalue.value = '';
+				//store valeus on local storage
+				storeLink(oldLink.innerText, newLink.innerText);
 				const copyBtn = document.querySelectorAll('.copy-link');
 				//listen to copy click event
 				copyBtn.forEach((btn) => {
 					btn.addEventListener('click', () => {
 						//copy to clipboard
 						navigator.clipboard.writeText(newLink);
-						//test the copied output
-						//alert('Copied the text: ' + newLink.innerText);
+						//add copied style
 						btn.innerText = 'copied !';
 						btn.style.background = '#3b3054';
 					});
@@ -95,10 +96,42 @@ const shorteningIt = () => {
 			.catch((err) => console.log(err));
 	}
 };
+// store links in local storage
+const storeLink = (link, shortLink) => {
+	// data to be stored
+	let item = { link, shortLink };
+	let items = get();
+	items.push(item);
+	// store on local storage
+	localStorage.setItem('items', JSON.stringify(items));
+};
+const get = () => {
+	// get items from local storage
+	let items;
+	if (localStorage.getItem('items') == null) {
+		items = [];
+	} else {
+		items = JSON.parse(localStorage.getItem('items'));
+	}
+	return items;
+};
 
+// get data from local storage
+const getLinks = () => {
+	let items = get(); // get links
+	let markup = '';
+	//loop through
+	items.forEach(({ link, shortLink }) => {
+		markup += `
+			<div class="shortlink-box d-flex align-center container p-1 mb-1">
+			<p class="old-link">${link}</p>
+			<p class="new-link">${shortLink}</p>
+			<button class="btn-primary copy-link">copy</button></div>	
+		`;
+		document.querySelector('.output-container').innerHTML += markup;
+	});
+};
+//listen from events
+document.addEventListener('DOMContentLoaded', getLinks);
 const shortenBtn = document.querySelector('#shorten-btn');
 shortenBtn.addEventListener('click', shorteningIt);
-
-// https://regexr.com/39nr7
-// https://htmlcolors.com/hsl-to-hex
-// https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
