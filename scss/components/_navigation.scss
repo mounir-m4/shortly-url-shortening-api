@@ -1,0 +1,110 @@
+@use '../utilities/layout' as *;
+@use '../utilities/buttons' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/typography' as *;
+@use '../utilities/variables' as *;
+
+.main-nav {
+	.container {
+		a {
+			flex: 1;
+		}
+		.nav-links {
+			flex: 6;
+			@include reset-ul;
+			a {
+				@include global-a;
+			}
+		}
+		.nav-buttons {
+			flex: 2;
+			align-content: center;
+			justify-content: flex-end;
+			gap: 1rem;
+		}
+	}
+}
+
+// hamburger menu
+.hamburger {
+	display: none;
+}
+.hamburger {
+	position: relative;
+	align-items: center;
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+	padding: 1rem 0.5rem;
+	&-btn {
+		cursor: pointer;
+		width: 30px;
+		height: 2px;
+		background: $dark-violet;
+		border-radius: 10px;
+		transition: all 0.5s ease-in-out;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 30px;
+			height: 2px;
+			background: $dark-violet;
+			border-radius: 10px;
+			transition: all 0.5s ease-in-out;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			width: 30px;
+			height: 2px;
+			background: $dark-violet;
+			border-radius: 10px;
+			transition: all 0.5s ease-in-out;
+		}
+		&:before {
+			transform: translateY(-8px);
+		}
+		&:after {
+			transform: translateY(8px);
+		}
+	}
+	// toggle menu btn
+	.open {
+		transform: translateX(-50px);
+		background: transparent;
+		&:before {
+			transform: rotate(45deg) translate(35px, -35px);
+		}
+		&:after {
+			transform: rotate(-45deg) translate(35px, 35px);
+		}
+	}
+}
+// menu on mobile
+.menu-mobile {
+	position: absolute;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	top: 15%;
+	left: 5%;
+	width: 90%;
+	background: $dark-violet;
+	color: $white;
+	height: 60vh;
+	z-index: 100;
+	list-style: none;
+	padding: 2rem;
+	box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+	border-radius: 5px;
+	transition: all 100ms ease;
+	@include reset-ul;
+	li {
+		margin: 1rem auto;
+		a {
+			@include global-a;
+			color: $white;
+			font-weight: 500;
+			font-size: 1.1rem;
+		}
+	}
+}

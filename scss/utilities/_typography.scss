@@ -1,0 +1,41 @@
+@use './variables' as *;
+//texts
+.lead {
+	font-size: 1rem;
+	margin-bottom: 1.5rem;
+	font-weight: normal;
+	letter-spacing: 0.6px;
+	padding-right: 3rem;
+	line-height: 1.6;
+	color: $grayish-violet;
+}
+
+.text-center {
+	text-align: center;
+}
+// headings
+.h {
+	&1 {
+		color: $dark-blue;
+		margin: 0.5rem auto;
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+	&2 {
+		font-size: 2rem;
+		margin: 1rem auto;
+		color: $dark-violet;
+		font-weight: 700;
+	}
+	&3 {
+		font-size: 1.4rem;
+		color: $dark-violet-2;
+		font-weight: 700;
+	}
+	&3-light {
+		font-size: 2.4rem;
+		color: $white;
+		font-weight: 700;
+	}
+}

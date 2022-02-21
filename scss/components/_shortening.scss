@@ -1,0 +1,92 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/variables' as *;
+.shortening {
+	margin-top: -10rem;
+	.shorten-container {
+		position: relative;
+		z-index: 1;
+		//shorten background pattern
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			background: url('../images/bg-shorten-desktop.svg') no-repeat center
+				center / cover;
+			height: 100%;
+			width: 100%;
+		}
+		@include bg-dark;
+		border-radius: 10px;
+		gap: 2rem;
+
+		.form-group {
+			flex: 4;
+			input {
+				padding: 1rem;
+				border-radius: 10px;
+				outline: none;
+				width: 100%;
+				border: 1.5px solid transparent;
+				transition: all 0.2s ease;
+				color: $grayish-violet;
+				font-size: 1rem;
+				line-height: 1.2;
+				&:focus {
+					border: 1.5px solid $cyan;
+				}
+			}
+		}
+		button {
+			flex: 1;
+			padding: 1rem;
+			border-radius: 10px;
+			font-size: 1.2rem;
+			&:hover {
+				background: rgb(122, 238, 238);
+				opacity: 1;
+			}
+		}
+		//error handling
+		.error-text {
+			display: none;
+		}
+		.error-text {
+			position: absolute;
+			bottom: 22%;
+			left: 6%;
+			font-size: 0.9rem;
+			letter-spacing: 0.5px;
+			font-style: italic;
+			color: $red;
+			font-weight: 300;
+		}
+		.form-group.error .shorten-input {
+			border: 2px solid $red;
+		}
+		.form-group.error .error-text {
+			display: flex;
+		}
+	}
+	// output
+	.output-container {
+		.shortlink-box {
+			border-radius: 5px;
+			word-break: break-all;
+			@include bg-lighter;
+			gap: 1rem;
+			.old-link {
+				color: $dark-violet;
+				flex: 2;
+			}
+			.new-link {
+				color: $cyan;
+			}
+			.copy-link {
+				padding: 0.5rem 2rem;
+				border-radius: 5px;
+			}
+		}
+	}
+}

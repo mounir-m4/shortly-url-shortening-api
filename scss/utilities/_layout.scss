@@ -1,0 +1,37 @@
+@use './variables' as *;
+.container {
+	max-width: $container-width;
+	padding: 0 1.5rem;
+	margin: auto;
+	overflow: hidden;
+}
+.d-flex{
+	display: flex;
+}
+//align classes
+.align{
+	&-center{
+		align-items: center;
+	}
+	&-start{
+		align-items: flex-start;
+	}
+	&-end{
+		align-items: flex-end;
+	}
+}
+//align classes
+.justify{
+	&-center{
+		justify-content: center;
+	}
+	&-space-between{
+		justify-content: space-between;
+	}
+	&-space-around{
+		justify-content: space-around;
+	}
+}
+.vertical-middle{
+	vertical-align: middle;
+}

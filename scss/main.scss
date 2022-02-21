@@ -1,0 +1,18 @@
+@use './components/navigation' as *;
+@use './components/header' as *;
+@use './components//shortening' as *;
+@use './components/features' as *;
+@use './components/call-to-action' as *;
+@use './components/footer' as *;
+@use './utilities/spacing' as *;
+@use './medias/media' as *;
+
+// global css reset + set font family
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}

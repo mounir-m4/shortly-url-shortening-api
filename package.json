@@ -1,0 +1,15 @@
+{
+	"dependencies": {
+		"sass": "^1.49.8"
+	},
+	"name": "url-shortening-api",
+	"version": "1.0.0",
+	"description": "application to shorten your links",
+	"main": "index.js",
+	"devDependencies": {},
+	"scripts": {
+		"sass": "sass --watch scss/main.scss:dist/css/main.css"
+	},
+	"author": "mounir",
+	"license": "ISC"
+}

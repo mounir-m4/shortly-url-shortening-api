@@ -1,0 +1,376 @@
+@use '../utilities/variables' as *;
+// small smartphones
+@media screen and (max-width: 500px) {
+	//navigation
+	.main-nav.my-1 {
+		margin: 0 auto;
+		.container {
+			.nav-links {
+				display: none;
+			}
+			.nav-buttons {
+				border-top: 1px solid rgba($color: #ccc, $alpha: 0.5);
+				width: 80vw;
+				margin-top: 2rem;
+				align-items: center;
+				flex-direction: column;
+				justify-content: start;
+				gap: unset;
+				button {
+					padding: 0.9rem 5rem;
+					color: #fff;
+					font-size: 1.1rem;
+				}
+			}
+			.hamburger {
+				display: flex;
+			}
+		}
+	}
+	//header
+	.main-header.mt-2 {
+		margin-top: 0;
+		height: 120vh;
+		.container {
+			.main-header-content {
+				flex-direction: column;
+				height: 110vh;
+				.header-hero {
+					&::before {
+						left: 10%;
+						position: absolute;
+						top: 0%;
+						background-repeat: no-repeat;
+						width: 100%;
+						background-size: 120%;
+					}
+				}
+				.header-description {
+					margin-top: 22rem;
+					text-align: center;
+					h1 {
+						font-size: 2.5rem;
+					}
+					.lead {
+						padding-right: 0;
+					}
+					button {
+						margin-bottom: 2.5rem;
+					}
+				}
+			}
+		}
+	}
+	// features
+	.features.py-5 {
+		padding: 0.5rem;
+		margin-top: -2rem;
+		padding-bottom: 3rem;
+		.shortening {
+			margin-top: 4rem;
+			.shorten-container {
+				flex-direction: column;
+				padding: 1.5rem;
+				.form-group {
+					width: 100%;
+					.error-text {
+						left: 10%;
+						bottom: 45%;
+					}
+				}
+				.btn-primary {
+					width: 100%;
+					font-size: 1.2rem;
+				}
+			}
+		}
+		.shortlink-box {
+			flex-direction: column;
+			text-align: center;
+		}
+		.features-heading {
+			.lead {
+				padding-right: unset;
+				font-size: 1.1rem;
+			}
+			margin-bottom: 4rem;
+		}
+		.features-box {
+			flex-direction: column;
+			.feature {
+				text-align: center;
+				img {
+					display: block;
+					margin: 1rem auto;
+					margin-top: -4rem;
+				}
+			}
+			.line {
+				height: 6rem;
+				width: 0.5rem;
+				background-color: $cyan;
+			}
+			.feature.mt-5 {
+				margin-top: 1rem;
+			}
+			.feature.mt-max {
+				margin-top: 1rem;
+			}
+		}
+	}
+	//call to action
+	.cta {
+		text-align: center;
+		h2 {
+			font-size: 1.8rem;
+		}
+	}
+	//footer
+	.main-footer {
+		.container {
+			.logo {
+				margin-bottom: 2rem;
+			}
+			.cols {
+				flex-direction: column;
+				align-content: center;
+				align-items: center;
+				.col ul {
+					align-items: center;
+				}
+				.col-four {
+					margin-top: 2rem;
+				}
+			}
+		}
+	}
+}
+// large smartphones (fix height)
+@media screen and (min-height: 750px) {
+	.main-header.mt-2 {
+		height: 100vh;
+	}
+	.features.py-5 {
+		.shortening {
+			margin-top: -5rem;
+			padding-bottom: 3rem;
+		}
+	}
+}
+// landscape
+@media screen and (max-height: 450px) {
+	//navigation
+	.main-nav.my-1 {
+		margin: 0.5rem auto;
+		.container {
+			.nav-links {
+				display: none;
+			}
+			.hamburger {
+				display: flex;
+			}
+		}
+	}
+	//header
+	.main-header.mt-2 {
+		margin-top: 1rem;
+		height: 120vh;
+		.container {
+			.main-header-content {
+				.header-description {
+					h1 {
+						font-size: 2.5rem;
+					}
+				}
+			}
+		}
+	}
+	.features.py-5 {
+		padding: 2rem;
+		padding-bottom: 3rem;
+		.shortening {
+			margin-top: -4rem;
+			.shorten-container.p-4 {
+				padding: 3rem;
+				button {
+					font-size: 1rem;
+				}
+				.error-text {
+					bottom: 15%;
+				}
+			}
+		}
+		.features-box {
+			flex-direction: column;
+			margin-top: 4rem;
+			.feature {
+				padding: 2rem;
+				text-align: center;
+				img {
+					display: block;
+					margin: 1rem auto;
+					margin-top: -4rem;
+				}
+			}
+			.line {
+				height: 6rem;
+				width: 0.5rem;
+				background-color: $cyan;
+			}
+			.feature.mt-5 {
+				margin-top: 1rem;
+			}
+			.feature.mt-max {
+				margin-top: 1rem;
+			}
+		}
+	}
+	//call to action
+	.cta {
+		text-align: center;
+		h2 {
+			font-size: 1.8rem;
+		}
+	}
+	.main-footer {
+		.container {
+			.logo {
+				margin-bottom: 2rem;
+			}
+			.cols {
+				flex-direction: column;
+				align-content: center;
+				align-items: center;
+				.col ul {
+					align-items: center;
+				}
+				.col-four {
+					margin-top: 2rem;
+				}
+			}
+		}
+	}
+}
+// small phones landcsape
+@media screen and (max-height: 350px) {
+	//navigation
+	.main-nav.my-1 {
+		margin: 0.2rem auto;
+		.menu-mobile {
+			height: 80vh;
+		}
+	}
+	.main-header.mt-2 {
+		height: 90vh;
+		.container {
+			.main-header-content {
+				.header-description {
+					h1 {
+						font-size: 2rem;
+					}
+					.lead {
+						padding-right: unset;
+						font-size: 0.8rem;
+						margin-bottom: 0.5rem;
+					}
+					button {
+						padding: 0.5rem 1.5rem;
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+	}
+	.features.py-5 {
+		margin-top: 2rem;
+		padding-bottom: 3rem;
+		.shortening {
+			margin-top: -5rem;
+			.shorten-container.p-4 {
+				padding: 2rem;
+				input {
+					font-size: 0.9rem;
+				}
+				button {
+					font-size: 0.9rem;
+				}
+				.error-text {
+					bottom: 10%;
+				}
+			}
+		}
+	}
+}
+
+//tablets
+@media screen and (min-height: 1024px) {
+	//navigation
+	.main-nav.my-1 {
+		margin-bottom: 2rem;
+	}
+	//header
+	.main-header.mt-2 {
+		margin-top: 0;
+		height: 120vh;
+		.container {
+			.main-header-content {
+				flex-direction: column;
+				height: 110vh;
+				.header-hero {
+					&::before {
+						left: 10%;
+						position: absolute;
+						top: 0%;
+						background-repeat: no-repeat;
+						width: 100%;
+						background-size: 120%;
+					}
+				}
+				.header-description {
+					margin-top: 65vh;
+					text-align: center;
+					h1 {
+						font-size: 3rem;
+					}
+					.lead {
+						padding-right: 0;
+						font-size: 1.1rem;
+						padding: 1rem 4rem;
+					}
+					button {
+						margin-bottom: unset;
+						padding: 1rem 4rem;
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+	//features
+	.features.py-5 {
+		padding: 1rem;
+		padding-bottom: 3rem;
+		.shortening {
+			margin: -10rem 1rem 0 1rem;
+		}
+	}
+	//footer
+	.main-footer {
+		.container {
+			.cols {
+				align-items: flex-start;
+				gap: 1rem;
+				justify-content: center;
+				.col {
+					display: flex;
+				}
+				.col ul li a {
+					margin: 0.5rem 0.1rem;
+				}
+			}
+			.col-four {
+				flex-direction: column;
+			}
+		}
+	}
+}

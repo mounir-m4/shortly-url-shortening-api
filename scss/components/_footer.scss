@@ -1,0 +1,49 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/variables' as *;
+
+.main-footer {
+	@include bg-darker;
+	.cols {
+		.logo {
+			flex: 3;
+		}
+		.col-one,
+		.col-two,
+		.col-three {
+			flex: 2;
+		}
+		.col-four {
+			align-items: baseline;
+		}
+		.col {
+			ul {
+				@include reset-ul;
+				flex-direction: column;
+				align-items: flex-start;
+				// get the first element and make it white
+				li {
+					margin: 0.2rem 0;
+					&:first-child {
+						margin-bottom: 1rem;
+						a {
+							color: $white;
+						}
+					}
+					a {
+						@include global-a-footer;
+					}
+				}
+			}
+			// icons
+			a svg {
+				margin: 0.5rem;
+			}
+			a svg path {
+				transition: fill 0.2s ease;
+				&:hover {
+					fill: $cyan;
+				}
+			}
+		}
+	}
+}

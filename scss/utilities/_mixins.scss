@@ -1,0 +1,42 @@
+@use './variables' as *;
+
+//backgrounds
+@mixin bg-light {
+	background: $light-gray;
+}
+@mixin bg-lighter {
+	background: $white;
+}
+@mixin bg-dark {
+	background: $dark-violet;
+}
+@mixin bg-darker {
+	background: $dark-violet-2;
+}
+
+// mixins styles
+@mixin reset-ul {
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+// anchors
+@mixin global-a {
+	color: $grayish-violet;
+	text-decoration: none;
+	font-weight: 300;
+	font-size: 1rem;
+	letter-spacing: 0.6px;
+	margin: 0 1rem;
+	transition: color 0.2s ease-in;
+	text-transform: capitalize;
+	&:hover {
+		color: $dark-violet;
+	}
+}
+@mixin global-a-footer {
+	@include global-a;
+	&:hover {
+		color: $cyan;
+	}
+}

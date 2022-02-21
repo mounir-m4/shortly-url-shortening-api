@@ -1,0 +1,29 @@
+@use '../utilities/mixins' as *;
+.main-header {
+	position: relative;
+	overflow: hidden;
+  height: 100vh;
+	.header {
+		&-description {
+			flex: 1;
+      button{
+        padding: .8rem 2rem;
+      }
+		}
+		&-hero {
+			flex: 1;
+      height: 70vh;
+			&::before {
+        content: '';
+        position: absolute;
+        top: 0%;
+        right: -55%;
+        height: 100%;
+        background: url(../images/illustration-working.svg);
+        background-repeat: no-repeat;
+        width: 100%;
+        background-size: 50%;
+			}
+		}
+	}
+}

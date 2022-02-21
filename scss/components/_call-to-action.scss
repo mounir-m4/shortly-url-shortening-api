@@ -1,0 +1,24 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/variables' as *;
+
+.cta {
+	flex-direction: column;
+	position: relative;
+	z-index: 1;
+	@include bg-dark;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		background: url('../images/bg-boost-desktop.svg') no-repeat center center /
+			cover;
+		height: 100%;
+		width: 100%;
+	}
+	button {
+		margin: 1rem auto;
+		padding: 0.8rem 2rem;
+	}
+}
