@@ -122,6 +122,7 @@
   align-content: center;
   justify-content: flex-end;
   gap: 1rem;
+  width: 100%;
 }
 
 .hamburger {
@@ -668,7 +669,7 @@
   }
   .main-nav.my-1 .container .nav-buttons {
     border-top: 1px solid rgba(204, 204, 204, 0.5);
-    width: 80vw;
+    width: 100%;
     margin-top: 2rem;
     align-items: center;
     flex-direction: column;
@@ -676,7 +677,7 @@
     gap: unset;
   }
   .main-nav.my-1 .container .nav-buttons button {
-    padding: 0.9rem 5rem;
+    padding: 0.9rem 4rem;
     color: #fff;
     font-size: 1.1rem;
   }

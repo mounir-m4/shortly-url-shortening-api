@@ -86,7 +86,7 @@ const shorteningIt = () => {
 				copyBtn.forEach((btn) => {
 					btn.addEventListener('click', () => {
 						//copy to clipboard
-						navigator.clipboard.writeText(newLink);
+						navigator.clipboard.writeText(newLink.innerText);
 						//add copied style
 						btn.innerText = 'copied !';
 						btn.style.background = '#3b3054';
